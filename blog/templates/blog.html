@@ -1,0 +1,81 @@
+<!-- Code by: myth-dev or thehackerworld
+Instagram: thehackerworld_
+Telegram: @myth_dev
+Github: https://github.com/mython-dev -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogs</title>
+
+    {% load static %}
+
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+</head>
+<body>
+    <br></br>
+<pre align="center", class="banner">
+    ███╗   ███╗██╗   ██╗████████╗██╗  ██╗      ██████╗ ███████╗██╗   ██╗
+    ████╗ ████║╚██╗ ██╔╝╚══██╔══╝██║  ██║      ██╔══██╗██╔════╝██║   ██║
+    ██╔████╔██║ ╚████╔╝    ██║   ███████║█████╗██║  ██║█████╗  ██║   ██║
+    ██║╚██╔╝██║  ╚██╔╝     ██║   ██╔══██║╚════╝██║  ██║██╔══╝  ╚██╗ ██╔╝
+    ██║ ╚═╝ ██║   ██║      ██║   ██║  ██║      ██████╔╝███████╗ ╚████╔╝ 
+    ╚═╝     ╚═╝   ╚═╝      ╚═╝   ╚═╝  ╚═╝      ╚═════╝ ╚══════╝  ╚═══╝  
+
+"You may stop this individual, but you can't stop us all... after all, we're all alike." 
+</pre>
+
+<div class="menu">
+    <ul align="center">
+      <li style="font-size: 15px;"><a href="{% url 'home'%}">Root</a></li>
+      <li style="background-color: #999999; font-size: 15px;"><a href="{% url 'blogs:blog' %}">Blog</a></li>
+      <li style="font-size: 15px;"><a href="{% url 'projects:projects' %}">Projects</a></li>
+      <li style="font-size: 15px;"><a href="{% url 'contact' %}">Connect with me</a></li>
+      <li style="font-size: 15px;"><a href="#">Resume</a></li>
+    </ul>
+</div>
+
+<center>
+
+    <h1>Myth-Dev has written {{ blogs.count }} blog{{blogs.count|pluralize}}</h1>
+    
+</center>
+
+<center>
+    <form id="form" role="search" action="{% url 'blogs:search'%}" method="get">
+        <input type="search" id="query" name="q"
+         placeholder="Search blog..."
+         aria-label="Search through site content">
+        <button>Search</button>
+      </form>
+</center>
+
+{% for blog in blogs %}
+
+
+<a href="{% url 'blogs:detail' blog.id %}">
+    <h2 style="margin-left: 1px; color: #666699;">>> {{blog.title}}</h2> 
+</a>
+
+<b><h3 style="color: #287979;;"> // The author of the blog: {{blog.author}}</h3></b>
+
+<h4>// This blog was done in: {{blog.date}}</h4>
+
+<b style="color: #009900;">[+]</b> <em>{{blog.description|safe|truncatechars:250}}</em>
+
+<p>--------------------------------------------------------------------------------------------</p>
+
+
+
+{% endfor %}</body>
+</html>  
+
+<br></br>
+<br></br>
+<br></br>
+
+</body>
+</html>  

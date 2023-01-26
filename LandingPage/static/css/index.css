@@ -1,0 +1,56 @@
+body {
+    background-color: #171b1b;
+    margin: 0 auto;
+    color: #a6a6a6;
+    padding: 0;
+    font-family: monospace;
+    width: 800px;
+    font-size: 14px;
+}
+
+ol {
+    background-color: black;
+    color: green;
+}
+
+.banner{
+    color: 575757
+}
+
+.menu {
+    border: 1px dashed #a6a6a6;
+    border-radius: 3px;
+}
+.menu ul li {
+    display: inline;
+    margin-left: 5px;
+}
+.menu ul li a {
+    text-decoration: none;
+    color: #666699;
+    text-align: center;
+}
+.menu ul li a:hover {
+    padding: 2px;
+    border-bottom: 2px solid #666699;
+}
+
+
+.btn{ 
+    color: black; 
+    background: yellowgreen; 
+    border: 3px solid yellowgreen; 
+    min-height: 48px; 
+    padding: 12px 34px; 
+    border-radius: 4px; 
+    font-weight: 600; 
+    font-family: plex-sans,sans-serif; 
+    font-size: 16px; 
+    line-height: 24px; 
+    margin: 0; 
+    box-sizing: border-box; 
+    cursor: pointer; 
+    } 
+    
+
+    

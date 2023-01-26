@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Myth Dev</title>
+
+    {% load static %}
+
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+</head>
+<body>
+
+<center> 
+<h1 class="text-center mt-5" id="blogdetailtitle" style="color: #666699;"> >>{{ projects.title }}</h1>
+</center>   
+
+
+
+
+<h4 class="text-center text-muted mb-5" style="color: #2289ac;" >{{ projects.date }}</h4>
+
+
+
+
+<b style="color: #009900;">[+]</b> <em>{{projects.description|safe}}</em>
+
+\
+<p>--------------------------------------------------------------------------------------------</p>
+<br></br>
+<br></br>
+
+<center>
+
+<a class='btn' href="{% url 'projects:projects' %}" class="btn btn-warning">Back</a>
+
+</center>
+
+</body>
+</html>  

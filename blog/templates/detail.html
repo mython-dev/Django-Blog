@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Myth Dev</title>
+
+    {% load static %}
+
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+</head>
+<body>
+
+<center> 
+<h1 class="text-center mt-5" id="blogdetailtitle" style="color: #666699;"> >>{{ blog.title }}</h1>
+</center>   
+
+
+<b><h3 style="color: #009900;" > // The author of the blog: {{blog.author}}</h3></b>
+<b><h4 style="color:  #2289ac;">// Author Email: {{blog.email}}</b></h4>
+
+
+
+<h4 class="text-center text-muted mb-5" style="color: #2289ac;" >{{ blog.date|date:'F jS Y' }}</h4>
+
+<p >--------------------------------------------------------------------------------------------</p>
+
+<b style="color: #009900;">[+]</b> <em>{{blog.description|safe}}</em>
+
+
+<br></br>
+<br></br>
+
+<center>
+
+<a class='btn' href="{% url 'blogs:blog' %}" class="btn btn-warning">Back</a>
+
+</center>
+
+</body>
+</html>  

@@ -1,0 +1,60 @@
+<!-- Code by: myth-dev or thehackerworld
+Instagram: thehackerworld_
+Telegram: @myth_dev
+Github: https://github.com/mython-dev -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Myth Dev</title>
+
+    {% load static %}
+
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+</head>
+<body>
+    <br></br>
+<pre align="center", class="banner">
+    ███╗   ███╗██╗   ██╗████████╗██╗  ██╗      ██████╗ ███████╗██╗   ██╗
+    ████╗ ████║╚██╗ ██╔╝╚══██╔══╝██║  ██║      ██╔══██╗██╔════╝██║   ██║
+    ██╔████╔██║ ╚████╔╝    ██║   ███████║█████╗██║  ██║█████╗  ██║   ██║
+    ██║╚██╔╝██║  ╚██╔╝     ██║   ██╔══██║╚════╝██║  ██║██╔══╝  ╚██╗ ██╔╝
+    ██║ ╚═╝ ██║   ██║      ██║   ██║  ██║      ██████╔╝███████╗ ╚████╔╝ 
+    ╚═╝     ╚═╝   ╚═╝      ╚═╝   ╚═╝  ╚═╝      ╚═════╝ ╚══════╝  ╚═══╝  
+
+"You may stop this individual, but you can't stop us all... after all, we're all alike." 
+</pre>
+
+<div class="menu">
+    <ul align="center">
+      <li style="font-size: 15px;"><a href="{% url 'home' %}">Root</a></li>
+      <li style="font-size: 15px;"><a href="{% url 'blogs:blog' %}">Blog</a></li>
+      <li style="font-size: 15px;"><a href="{% url 'projects:projects' %}">Projects</a></li>
+      <li style="font-size: 15px; background-color: #999999"><a href="#">Connect with me</a></li>
+      <li style="font-size: 15px;"><a href="#">Resume</a></li>
+    </ul>
+</div>
+
+<center>
+
+<h1 align="center">Connect with me:</h1>
+
+<a href="https://t.me/myth_dev" target="_blank"><img alt="Telegram" src="https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white"/></a>
+<a href="mailto:miton0030@gmail.com" target="_blank"><img alt="GMail" src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white"/></a>
+<a href="https://instagram.com/thehackerworld_" target="_blank"><img alt="thehackerworld_" src="https://img.shields.io/badge/thehackerworld_-E4405F?style=for-the-badge&logo=instagram&logoColor=white"/></a>
+<a href="https://instagram.com/mython_dev" target="_blank"><img alt="mython_dev" src="https://img.shields.io/badge/mython_dev-E4405F?style=for-the-badge&logo=instagram&logoColor=white"/></a>
+<a href="https://github.com/mython-dev/" target="_blank"><img src="https://img.shields.io/badge/mython-dev-E4405F?style=for-the-badge&logo=github&logoColor=white" alt=""></a>
+</center>
+
+<br></br>
+
+<center>
+<a class='btn' href="{% url 'home' %}" class="btn btn-warning">Home</a>
+</center>
+    
+</body>
+</html> 
+

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+
+    {% load static %}
+
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+</head>
+<body>
+    <br></br>
+<pre align="center", class="banner">
+    ███╗   ███╗██╗   ██╗████████╗██╗  ██╗      ██████╗ ███████╗██╗   ██╗
+    ████╗ ████║╚██╗ ██╔╝╚══██╔══╝██║  ██║      ██╔══██╗██╔════╝██║   ██║
+    ██╔████╔██║ ╚████╔╝    ██║   ███████║█████╗██║  ██║█████╗  ██║   ██║
+    ██║╚██╔╝██║  ╚██╔╝     ██║   ██╔══██║╚════╝██║  ██║██╔══╝  ╚██╗ ██╔╝
+    ██║ ╚═╝ ██║   ██║      ██║   ██║  ██║      ██████╔╝███████╗ ╚████╔╝ 
+    ╚═╝     ╚═╝   ╚═╝      ╚═╝   ╚═╝  ╚═╝      ╚═════╝ ╚══════╝  ╚═══╝  
+
+"You may stop this individual, but you can't stop us all... after all, we're all alike." 
+</pre>
+
+<div class="menu">
+    <ul align="center">
+      <li style="font-size: 15px;"><a href="{% url 'home'%}">Root</a></li>
+      <li style="font-size: 15px;"><a href="{% url 'blogs:blog' %}">Blog</a></li>
+      <li style="background-color: #999999; font-size: 15px;"><a href="{% url 'projects:projects' %}">Projects</a></li>
+      <li style="font-size: 15px;"><a href="{% url 'contact' %}">Connect with me</a></li>
+      <li style="font-size: 15px;"><a href="#">Resume</a></li>
+    </ul>
+</div>
+
+<center>
+
+    <h1>Myth-Dev done {{ projects.count }} project {{blogs.count|pluralize}}</h1>
+    
+</center>
+
+
+<center>
+    <form id="form" role="search" action="{% url 'projects:search'%}" method="get">
+        <input type="search" id="query" name="q"
+         placeholder="Search a project..."
+         aria-label="Search through site content">
+        <button>Search</button>
+      </form>
+</center>
+
+{% for project in projects %}
+
+<a href="{% url 'projects:detail_project' project.id %}">
+
+<h2 style="margin-left: 1px; color: #666699;"> >> {{project.title}}</h2>
+
+</a>
+
+<h4>// This project posted in: {{project.date}}</h4>
+
+
+
+{% load static %}
+
+
+
+<style>
+.box {
+  width: 600px; /* ширина бокса */
+  height: 500px; /* высота бокса */
+  position: relative; /* размещаем относительно бокса */
+  overflow: hidden; /* все что выходит за границы - скрываем */
+  border: 3px solid #666699;
+}
+
+.picture {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  object-fit: cover; /* адаптариуем картинку под бокс */
+  transition: 0.2s; /* для плавности анимации */
+}
+
+.box:hover .picture {
+  transform: scale(1.15); /* увеличиваем картинку при наведении */
+}
+
+</style>
+{% if project.image %}
+
+
+<div class="box" class="container">
+
+    {% if project.image %}
+
+    <img  src="{{ project.image.url }}" width="600px" height="500px" alt="Image" class="picture">    
+
+    {% endif %}
+
+</div>
+
+{% endif %}
+
+<br></br>
+
+<b style="color: #009900;">[+]</b> <em>{{project.description|safe|truncatechars:250}}</em>
+
+<p>--------------------------------------------------------------------------------------------</p>
+
+{% endfor %}
+
+<br></br>
+<br></br>
+<br></br>
+    
+</body>
+</html>  
